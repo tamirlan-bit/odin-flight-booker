@@ -1,10 +1,106 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Inter',sans-serif;
+  font-weight: 500;
+  background: #f5f6fa;
+  color: #333;
+  line-height: 1.6;
+  font-size: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0rem;
+}
+.field {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.field label {
+  color: #555;
+  white-space: nowrap;
+}
+.img {
+  max-width: 70%;
+  max-width: 600px;
+  height: auto;
+}
+.search_bar form {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  min-width: 50%;
+}
+.search_results,.booking_result {
+  margin-top: 1.5rem;
+  background: #ffffff;
+  padding: 1.75rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  min-width: 60%;
+  text-align: center;
+}
+.search_results table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.search_results th, .flight_found{
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #475569;
+  padding-bottom: 0.75rem;
+}
+.search_results td {
+  padding: 0.9rem 0.5rem;
+  font-size: 0.95rem;
+  color: #1f2937;
+}
+.search_results tbody tr:not(:last-child) {
+  border-bottom: 1px solid #f1f5f9;
+}
+.search_results tbody tr:hover {
+  background: #f8fafc;
+}
+.search_results td:last-child {
+  font-weight: 600;
+  color: #154568;
+}
+
+input[type="submit"], .select-btn {
+  font-size: 1rem;
+  background: #154568;  
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+
+}
+input[type="submit"]:hover, button:hover, .select-btn:hover  {
+  background: #072e4b;
+}
+
+.subtitle {
+  margin: 1rem;
+  max-height: 1.5rem;
+}
+.search_bar, .select-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+}

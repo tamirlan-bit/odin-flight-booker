@@ -1,0 +1,10 @@
+<div class="booking_result">
+  <h2>Booking Flight</h2>
+  <p>
+    <strong>From:</strong> <%= @flight.departure_airport.code %><br>
+    <strong>To:</strong> <%= @flight.arrival_airport.code %><br>
+    <strong>Depart:</strong> <%= @flight.start_datetime.strftime("%b %d, %H:%M") %><br>
+    <strong>Duration:</strong> <%= @flight.duration_minutes %><br>
+  </p>
+  <%= link_to "Back", :back, class: "select-btn"%>
+</div>

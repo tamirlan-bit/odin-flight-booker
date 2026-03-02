@@ -1,0 +1,30 @@
+models:
+	Airports (SFO, LAX, CHI, NYC)
+	Flights ([id, departure_airport,arrival_airport,datetime,duration],[],[])
+
+associations:
+	Airports have many flights
+	Flight belong to many airports
+
+view:
+Fly with Odin- title
+From - dropdown menu
+To - dropdown menu
+number of passengers - dropdown 1-4
+date 
+
+
+Airport has:
+class name = departure_airport
+have_many:departing_flights, arriving_flights
+
+Flights:
+departure_airport_id: integer
+arrival_airport_id: integer
+duration_minutes : integer
+
+rails generate model Post title:string:null:false body:text:null:false
+
+
+for chat:
+1) What should the search form submit as params? I think it would be something like: From - it will open dropdown menu of departing airports to\destination - same open menu but of arrival airports departure date: open datetime window to chose departure date arrival date: same for arrival like departrure and big button search --- what excactly you meant when asking about params? please explain as its confusing to me 2. I think search should be in flights, as it job to find flights seem very logical and reasonble just for that reason, im sure there more 3. matching airports is a must, also this is simple flight booker not the one that you can leave it open and see where you can fly, its more old school and simple, same by date and make sense to order by time, of course it can be more complex if there no such flights to offer other dates, but I assume it should be simple at first at least

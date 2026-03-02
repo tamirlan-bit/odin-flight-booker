@@ -1,0 +1,57 @@
+<%= image_tag "logo.png", alt: "logo", class: "img" %>
+
+<div class="search_bar">
+  <%= form_with url: flights_path, method: :get do %>
+	<div class="field">
+	  <%= label_tag :departure_airport_id, "From" %>
+  	<%= select_tag :departure_airport_id,
+      options_from_collection_for_select(@airports, :id, :code, params[:departure_airport_id]) %>
+	</div>
+
+	<div class="field">
+	  <%= label_tag :arrival_airport_id, "To" %>
+	  <%= select_tag :arrival_airport_id,
+      options_from_collection_for_select(@airports, :id, :code, params[:arrival_airport_id]) %>
+	</div>
+
+	<div class="field">
+	  <%= label_tag :date, "Date" %>
+	  <%= date_field_tag :date, params[:date] %>
+	</div>
+
+  <div class="submit">
+	<%= submit_tag "Search" %>
+  </div>
+<% end %>
+</div>
+
+<% if @searched %>
+<div class="search_results">
+  <% if @flights.any? %>
+  <p class="flight_found">Found <%= @flights.size %> flights</p>
+    <table>
+        <thead>
+          <tr>
+            <th>From</th><th>To</th><th>Depart</th><th>Duration</th>
+          </tr>
+        </thead>
+    <tbody>  
+      <% @flights.each do |flight| %>        
+          <tr>
+            <td><%= flight.departure_airport.code %></td>          
+            <td><%= flight.arrival_airport.code %></td>
+            <td><%= flight.start_datetime.strftime("%b %d, %H:%M") %></td>
+            <td><%= flight.duration_minutes %></td>  
+            <td><%= link_to "Select", new_booking_path(flight_id: flight.id), class: "select-btn"%></td>
+          </tr>          
+      <% end %>
+    </tbody>      
+  </table>        
+  <% else %>
+    <p>No Flights were found with the current criteria</p>
+  <% end %>
+</div>
+<% end %>
+
+<%= image_tag "subtitle.png", alt: "subtitle", class: "subtitle" %>
+
