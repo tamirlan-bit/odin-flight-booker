@@ -1,10 +1,26 @@
-<div class="booking_result">
+<div class="booking_form">
   <h2>Booking Flight</h2>
   <p>
+    <strong>Passengers:</strong> <%= @passengers_count %><br>
     <strong>From:</strong> <%= @flight.departure_airport.code %><br>
     <strong>To:</strong> <%= @flight.arrival_airport.code %><br>
     <strong>Depart:</strong> <%= @flight.start_datetime.strftime("%b %d, %H:%M") %><br>
     <strong>Duration:</strong> <%= @flight.duration_minutes %><br>
   </p>
-  <%= link_to "Back", :back, class: "select-btn"%>
+
+  <%= form_with model: @booking do |f| %>
+    <%= f.hidden_field :flight_id %>
+
+    <%= f.fields_for :passengers do |p| %>
+      <div class="passenger">
+        <%= p.label :name, "Name" %>
+        <%= p.text_field :name %>      
+      </div>
+    <% end %>
+    <div class="submit">
+      <%= f.submit "Create Booking" %>
+      <%= link_to "Back", :back, class: "select-btn"%>
+    </div>
+  <% end %>
+
 </div>

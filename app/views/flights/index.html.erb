@@ -19,6 +19,11 @@
 	  <%= date_field_tag :date, params[:date] %>
 	</div>
 
+  <div class="field">
+	  <%= label_tag :passengers_count, "Passengers" %>
+	  <%= select_tag :passengers_count, options_for_select( (1..9), params[:passengers_count] || 1 ) %>
+	</div>
+
   <div class="submit">
 	<%= submit_tag "Search" %>
   </div>
@@ -42,7 +47,8 @@
             <td><%= flight.arrival_airport.code %></td>
             <td><%= flight.start_datetime.strftime("%b %d, %H:%M") %></td>
             <td><%= flight.duration_minutes %></td>  
-            <td><%= link_to "Select", new_booking_path(flight_id: flight.id), class: "select-btn"%></td>
+            <td><%= link_to "Select", new_booking_path(flight_id: flight.id,
+              passengers_count: params[:passengers_count]), class: "select-btn"%></td>
           </tr>          
       <% end %>
     </tbody>      

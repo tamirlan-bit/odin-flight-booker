@@ -1,0 +1,17 @@
+<div class="booking_form">
+  <h2>Booking Confirmed</h2>
+  <p>
+    <strong>From: </strong> <%= @booking.flight.departure_airport.code %><br>
+    <strong>To: </strong> <%= @booking.flight.arrival_airport.code %><br>
+    <strong>Depart: </strong> <%= @booking.flight.start_datetime.strftime("%b %d, %H:%M") %><br>
+    <strong>Duration: </strong> <%= @booking.flight.duration_minutes %><br>
+    <strong>Passengers: </strong> <%= @booking.passengers.size %><br>
+    <ul>
+      <% @booking.passengers.each do |passenger| %>
+        <li><strong>Name: </strong><%= passenger.name %></li>
+      <% end %>
+    </ul>
+  </p>
+</div>
+
+   

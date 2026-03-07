@@ -43,7 +43,7 @@ body {
   gap: 1rem;
   min-width: 50%;
 }
-.search_results,.booking_result {
+.search_results,.booking_form{
   margin-top: 1.5rem;
   background: #ffffff;
   padding: 1.75rem 2rem;
@@ -103,4 +103,14 @@ input[type="submit"]:hover, button:hover, .select-btn:hover  {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   font-weight: normal;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.passenger {
+  padding: 0.2rem 0.5rem;
+}
+.submit {
+  padding: 1rem 0.5rem;
 }
