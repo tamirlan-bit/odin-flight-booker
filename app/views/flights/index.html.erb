@@ -45,8 +45,8 @@
           <tr>
             <td><%= flight.departure_airport.code %></td>          
             <td><%= flight.arrival_airport.code %></td>
-            <td><%= flight.start_datetime.strftime("%b %d, %H:%M") %></td>
-            <td><%= flight.duration_minutes %></td>  
+            <td><%= flight.start_datetime.strftime("%b %d • %H:%M") %></td>
+            <td><%= flight.duration_minutes/60 %>h <%= flight.duration_minutes%60 %>min</td>            
             <td><%= link_to "Select", new_booking_path(flight_id: flight.id,
               passengers_count: params[:passengers_count]), class: "select-btn"%></td>
           </tr>          

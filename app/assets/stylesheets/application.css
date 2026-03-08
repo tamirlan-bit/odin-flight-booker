@@ -27,7 +27,7 @@ body {
   white-space: nowrap;
 }
 .img {
-  max-width: 70%;
+  max-width: 70vw;
   max-width: 600px;
   height: auto;
 }
@@ -39,17 +39,28 @@ body {
   margin: 1rem;
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  flex: 1 1 120px;
   gap: 1rem;
   min-width: 50%;
 }
-.search_results,.booking_form{
+.search_results {
   margin-top: 1.5rem;
   background: #ffffff;
   padding: 1.75rem 2rem;
   border-radius: 50px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   min-width: 60%;
+  text-align: center;
+  overflow-x: auto;
+}
+.booking_form{
+  margin-top: 1.5rem;
+  background: #ffffff;
+  padding: 1.75rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  min-width: 20%;
   text-align: center;
 }
 .search_results table {
@@ -113,4 +124,18 @@ ul {
 }
 .submit {
   padding: 1rem 0.5rem;
+}
+.page_logo {
+  width: min(320px, 30vw);
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.page_title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #154568;
+  text-align: center;
+  margin: 0 0 1.5rem;
 }

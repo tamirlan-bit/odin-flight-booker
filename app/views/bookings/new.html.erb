@@ -1,11 +1,14 @@
+  <%= image_tag "page_logo.png", alt: "Flight Booker logo", class: "page_logo" %>
+
 <div class="booking_form">
-  <h2>Booking Flight</h2>
+  <h1 class="page_title">Complete Your Booking</h1>
+
   <p>
     <strong>Passengers:</strong> <%= @passengers_count %><br>
     <strong>From:</strong> <%= @flight.departure_airport.code %><br>
     <strong>To:</strong> <%= @flight.arrival_airport.code %><br>
-    <strong>Depart:</strong> <%= @flight.start_datetime.strftime("%b %d, %H:%M") %><br>
-    <strong>Duration:</strong> <%= @flight.duration_minutes %><br>
+    <strong>Depart:</strong> <%= @flight.start_datetime.strftime("%b %d • %H:%M") %><br>
+    <strong>Duration:</strong> <%= @flight.duration_minutes/60 %>h <%= @flight.duration_minutes%60 %>min<br>
   </p>
 
   <%= form_with model: @booking do |f| %>
