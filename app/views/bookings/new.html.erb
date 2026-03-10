@@ -11,7 +11,17 @@
     <strong>Duration:</strong> <%= @flight.duration_minutes/60 %>h <%= @flight.duration_minutes%60 %>min<br>
   </p>
 
-  <%= form_with model: @booking do |f| %>
+  <% if @booking.errors.any? %>
+  <div class="errors">
+    <ul>
+      <% @booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <%= form_with model: @booking, data: { turbo: false } do |f| %>
     <%= f.hidden_field :flight_id %>
 
     <%= f.fields_for :passengers do |p| %>
@@ -22,7 +32,6 @@
     <% end %>
     <div class="submit">
       <%= f.submit "Create Booking" %>
-      <%= link_to "Back", :back, class: "select-btn"%>
     </div>
   <% end %>
 

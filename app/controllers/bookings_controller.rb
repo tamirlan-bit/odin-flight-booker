@@ -23,6 +23,9 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to @booking
     else
+      @flight = @booking.flight
+      @passengers_count = @booking.passengers.size
+      @showing_failed_form = true
       render :new
     end
   end

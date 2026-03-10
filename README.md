@@ -1,24 +1,35 @@
-# README
+# Flight Booker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple flight booking application built with Ruby on Rails as part of The Odin Project curriculum.
 
-Things you may want to cover:
+Users can search for flights between airports, select a flight, and create a booking for one or more passengers.
 
-* Ruby version
+---
 
-* System dependencies
+## Features
 
-* Configuration
+- Search flights by departure airport, arrival airport, and date
+- Display available flights ordered by departure time
+- Select a flight and create a booking
+- Support multiple passengers per booking
+- Passenger name validation
+- Booking confirmation page
 
-* Database creation
+---
 
-* Database initialization
+## Screenshots
 
-* How to run the test suite
+### Flight search
+![Flight search](screenshots/flight_booker1.jpg)
 
-* Services (job queues, cache servers, search engines, etc.)
+### Search results
+![Search results](screenshots/flight_booker2.jpg)
 
-* Deployment instructions
+### Booking form
+![Booking form](screenshots/flight_booker3.jpg)
 
-* ...
+### Validation example
+![Validation example](screenshots/flight_booker4.jpg)
+
+### Booking confirmation
+![Booking confirmation](screenshots/flight_booker5.jpg)
